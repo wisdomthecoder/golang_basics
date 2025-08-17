@@ -1,16 +1,19 @@
 package main
 
 import (
-	"runtime"
+	"time"
 )
 
 func main() {
-	switch os := runtime.GOOS; os {
-	case "darwin":
-		print("This is a mac")
-	case "linux":
-		print("This is Life")
+	t := time.Now()
+	defer println("Hello Wisdom")
+
+	switch {
+	case t.Hour() < 12:
+		println("Chief Good morning")
+	case t.Hour() < 17:
+		println("Chief Good Afternoon")
 	default:
-		print("Na you sabi")
+		println("Chief Relax")
 	}
 }
