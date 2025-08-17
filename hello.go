@@ -1,13 +1,12 @@
 package main
 
-import (
-	"fmt"
-	// "time"
-)
+import "fmt"
 
 func main() {
-	var i uint = 0b01
-	var u int = int(i)
-	fmt.Print(u)
+	var i uint16 = 10_000
+	fmt.Println(i)
+}
+func add(x, y int) int {
+	return x + y
 
 }
