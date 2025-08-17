@@ -1,20 +1,16 @@
 package main
 
-import "math"
+import (
+	"runtime"
+)
 
 func main() {
-	for i := 1; i < 1000000; i++ {
-		if isPerfectSquare(float64(i)) {
-			println(i, " is a perfect square")
-		}
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		print("This is a mac")
+	case "linux":
+		print("This is Life")
+	default:
+		print("Na you sabi")
 	}
-}
-func isPerfectSquare(v float64) bool {
-
-	if root := float32(math.Sqrt(v)); root == float32(int(root)) {
-		return true
-	} else {
-		return false
-	}
-
 }
